@@ -1,0 +1,6 @@
+name = "valdot-web"
+pages_build_output_dir = "."
+compatibility_date = "2026-07-17"
+
+[vars]
+UPSTREAM_API = "https://api.sansekai.my.id/api/dramabox"
