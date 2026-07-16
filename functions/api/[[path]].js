@@ -142,11 +142,3 @@ export function onRequestOptions() {
     },
   });
 }
-
-export function onRequest() {
-  return json(
-    { error: "Metode tidak diizinkan." },
-    405,
-    { Allow: "GET, OPTIONS", "Cache-Control": "no-store" },
-  );
-}
