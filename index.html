@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#08090d" />
+  <meta name="description" content="Valdot — katalog drama pendek, sinopsis, dan pencarian judul." />
+  <title>Valdot — Katalog Drama</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Valdot beranda">
+      <span class="brand-mark">V</span>
+      <span>VALDOT</span>
+    </a>
+
+    <form id="searchForm" class="search" role="search">
+      <label class="sr-only" for="searchInput">Cari drama</label>
+      <input id="searchInput" name="q" type="search" placeholder="Cari judul drama…" autocomplete="off" maxlength="80" />
+      <button type="submit" aria-label="Cari">Cari</button>
+    </form>
+
+    <a class="nav-link" href="/">Beranda</a>
+  </header>
+
+  <main id="app" tabindex="-1">
+    <section id="homeView" class="view">
+      <div class="hero">
+        <div class="hero-noise"></div>
+        <div class="hero-content">
+          <p class="eyebrow">KATALOG DRAMA PENDEK</p>
+          <h1>Cerita besar.<br /><span>Dalam waktu singkat.</span></h1>
+          <p class="hero-copy">Temukan judul populer, baca sinopsis, lalu cari tayangannya di platform resmi.</p>
+          <a class="primary-button" href="#terbaru">Jelajahi sekarang</a>
+        </div>
+        <div class="hero-orb hero-orb-one"></div>
+        <div class="hero-orb hero-orb-two"></div>
+      </div>
+
+      <section class="content-section" id="trending">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">SEDANG RAMAI</p>
+            <h2>Trending</h2>
+          </div>
+          <span class="section-note">Pilihan populer saat ini</span>
+        </div>
+        <div id="trendingGrid" class="card-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="content-section" id="terbaru">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">BARU DITAMBAHKAN</p>
+            <h2>Drama terbaru</h2>
+          </div>
+          <span class="section-note">Data diperbarui berkala</span>
+        </div>
+        <div id="latestGrid" class="card-grid" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section id="searchView" class="view hidden">
+      <div class="page-shell">
+        <button class="text-button" data-home>← Kembali ke beranda</button>
+        <div class="page-heading">
+          <p class="section-kicker">HASIL PENCARIAN</p>
+          <h1 id="searchTitle">Mencari…</h1>
+          <p id="searchCount" class="muted"></p>
+        </div>
+        <div id="searchGrid" class="card-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="detailView" class="view hidden">
+      <div id="detailContent" class="detail-shell" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">VALDOT</div>
+    <p>Katalog informasi. Tidak menyimpan atau memutar video.</p>
+    <p class="footer-small">Data metadata disediakan oleh API pihak ketiga dan dapat berubah sewaktu-waktu.</p>
+  </footer>
+
+  <template id="cardSkeleton">
+    <article class="media-card skeleton-card" aria-hidden="true">
+      <div class="poster skeleton"></div>
+      <div class="skeleton-line skeleton"></div>
+      <div class="skeleton-line short skeleton"></div>
+    </article>
+  </template>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
